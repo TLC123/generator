@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<meta charset=utf-8>
+
+<input type="text" id="myText" value="F&ouml;rnamn G. Efternamn">
+
+
+<button onclick="tjej()">Tjej</button>
+<button onclick="kille()">Kille</button>
+<button onclick="irrelevant()">Irrelevant</button>
+
+<p id="generator"></p>
+<input type="text" id="textbox" value=" ">
+
+<script>
+  function isconsonant(x) { 
+        return ("bcdfghjklmnpqrstvzxBCDFGHJKLMNPQRSTVZX".indexOf(x) != -1); 
+    }
+    
+function tjej()
+{
+  var prefix = ["Sirpa","Riitta","Pirjo","Aino","Maire","Oiva","Pilvi","Kyllikki","Virpi","Päivi","Tytti","Heljä","Soili","Ritva","Taina","Ritva","Maisa","Heli","Raija","Sini","Tarja","Meiju","Merja","Mirka"]; 
+  var forochefternamn =NameCase( document.getElementById("myText").value.trim());
+  var finnify = ["o ","i ","y ","u ","a "]; 
+  var finniletter=finnify[ Math.floor(Math.random()*finnify.length)];
+  forochefternamn=forochefternamn.replace(/(?<=[bcdfghj-np-tvwxz])\s/gi, finniletter+" ");
+  var last=forochefternamn.slice(-1);
+  var extrai=isconsonant(last)?"i":"";
+  var res= 
+  prefix[ Math.floor(Math.random()*prefix.length)]
+  +"-"
+  +forochefternamn
+  +extrai
+  +"nen"
+  ;
+  document.getElementById("textbox").value = res  ;
+  document.getElementById("generator").innerHTML = res;
+
+}
+function kille()
+{
+  var prefix = ["Esa","Juha","Olli","Jouko","Pellervo","Pertti","Väinö","Kyösti","Risto","Heino","Markku","Ilmari","Matti","Tauno","Eino","Miika","Jari","Erpo","Eemeli","Kaapo","Aku","Jyri","Jyrki","Uljas","Urpo","Jukka","Aapo"]; 
+  var forochefternamn =NameCase( document.getElementById("myText").value.trim());
+  var finnify = ["o ","i ","y ","u ","a "]; 
+  var finniletter=finnify[ Math.floor(Math.random()*finnify.length)];
+  forochefternamn=forochefternamn.replace(/(?<=[bcdfghj-np-tvwxz])\s/gi, finniletter+" ");
+  var last=forochefternamn.slice(-1);
+  var extrai=isconsonant(last)?"i":"";
+  var res= 
+  prefix[ Math.floor(Math.random()*prefix.length)]
+  +"-"
+  +forochefternamn
+  +extrai
+  +"nen"
+  ;
+  document.getElementById("textbox").value = res  ;
+  document.getElementById("generator").innerHTML = res;
+}
+function irrelevant()
+{
+  var prefix = ["Esa","Juha","Olli","Jouko","Pellervo","Pertti","Väinö","Kyösti","Risto","Heino","Markku","Ilmari","Matti","Sirpa","Riitta","Pirjo","Aino","Maire","Oiva","Pilvi","Kyllikki","Virpi","Päivi","Tytti","Heljä","Soili","Ritva","Taina","Heli","Raija","Sini","Tarja","Meiju","Merja","Mirka"]; 
+  var forochefternamn =NameCase( document.getElementById("myText").value.trim());
+  var finnify = ["o ","i ","y ","u ","a "]; 
+  var finniletter=finnify[ Math.floor(Math.random()*finnify.length)];
+  forochefternamn=forochefternamn.replace(/(?<=[bcdfghj-np-tvwxz])\s/gi, finniletter+" ");
+  var last=forochefternamn.slice(-1);
+  var extrai=isconsonant(last)?"i":"";
+  var res= 
+  prefix[ Math.floor(Math.random()*prefix.length)]
+  +"-"
+  +forochefternamn
+  +extrai
+  +"nen"
+  ;
+  document.getElementById("textbox").value = res  ;
+  document.getElementById("generator").innerHTML = res;
+}
+function NameCase(str) {
+str=str.replace(/[\s|-]\w/g, function(t) { return t.toUpperCase() })
+  return str.replace(/[a-z]/i, function (letter) {
+
+return letter.toUpperCase();
+
+  }).trim(); 
+  
+  return ;
+}
+
+</script>
+</body>
+</html>
